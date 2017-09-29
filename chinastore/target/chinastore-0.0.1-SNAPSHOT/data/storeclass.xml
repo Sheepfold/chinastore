@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/2002/xmlspec/dtd/2.10/xmlspec.dtd">
+<ChinaStoreClasses>
+	<ChinaStoreClass>
+		<ID>01</ID>
+		<Name>茶器</Name>
+		<ChildClassFlag>Y</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>02</ID>
+		<Name>餐具</Name>
+		<ChildClassFlag>Y</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>03</ID>
+		<Name>摆件</Name>
+		<ChildClassFlag>Y</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>04</ID>
+		<Name>花器</Name>
+		<ChildClassFlag>N</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>05</ID>
+		<Name>酒器</Name>
+		<ChildClassFlag>N</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>06</ID>
+		<Name>文房</Name>
+		<ChildClassFlag>N</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>07</ID>
+		<Name>咖啡具</Name>
+		<ChildClassFlag>N</ChildClassFlag>
+	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>08</ID>
+		<Name>家居</Name>
+		<ChildClassFlag>N</ChildClassFlag>
+	</ChinaStoreClass>
+</ChinaStoreClasses>
