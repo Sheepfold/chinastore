@@ -85,9 +85,7 @@ html, body {
     width: 18px;
     height: 18px;
 }
-#tbh5v0 .c-form-suggest {
-    position: relative;
-}
+
 #tbh5v0 {
     color: #3d4245;
 }
@@ -140,6 +138,7 @@ input[type="search" i] {
     box-sizing: border-box;
 }
 input {
+
     -webkit-appearance: textfield;
     background-color: white;
     -webkit-rtl-ordering: logical;
@@ -148,6 +147,10 @@ input {
     padding: 1px;
     border: 0;
 }
+input[type=search]::-ms-check{
+	display: none;
+}
+
 input, textarea, select, button {
     text-rendering: auto;
     color: initial;
@@ -260,9 +263,7 @@ element.style {
     opacity: 1;
     transform: scale(1, 1);
 }
-.top-bar.on .c-form-suggest .c-form-btn {
-    display: block;
-}
+
 #back2APP {
 	margin: 0px 0px 5px 10px;
     width: 20px;
@@ -298,6 +299,7 @@ display: inline;
 
 #menu3 a
 {
+color:#6896cc;
 align:center;
 font-family: 仿宋;
 font-weight: bold;
@@ -376,8 +378,6 @@ background: #f2f2f2 ;
 }
 /* Menu 4 ends here */
 
-<!-- icon cell -->
-
 .content_icon_cell {
 	width: 100%;
 	height: 100%;
@@ -414,6 +414,58 @@ background: #f2f2f2 ;
 	text-align:center;
 }
 
+#inputText {
+ left: 50%;
+ top: 50%;
+height:32px;
+margin-left:0px;
+outline:none;
+}
+#search_block {
+width: 100%;
+text-align:center;
+float:left;
+background-color: #fff;
+}
+
+#search_block ul
+{
+width: 100%;
+text-align:center;
+font-family: Arial, Helvetica, sans-serif;
+list-style-type:none;
+margin:0;
+padding:0;
+}
+#search_block li
+{
+display: inline;
+/* for IE5 and IE6 */
+margin:0px 0px 2px 0px;
+}
+
+#search_block a
+{
+color: #000;
+text-decoration: none;
+font-size: 15px;
+display: block;
+padding: 3px;
+background-color: #fff;
+margin:0;
+}
+
+#search_block a:link
+{
+text-decoration: none;
+}
+
+.search_block_icon_cell {
+	width: 25%;
+	float: left;
+	margin: 0;
+}
+
 </style>
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js" ></script>
 	<script type="text/javascript" src="js/store.js" ></script>
@@ -422,12 +474,84 @@ background: #f2f2f2 ;
 	    	navigationBarGenerate();
 	    	contentBlockGenerate("01");
 	    });
+	    
+	    function searchBlockProduce(){
+	    	getAllStores4Search();
+	    	var searchResultArr = new Array();
+	    	searchResultArr = searchStores($("#inputText").val());
+	    	var htmlOutString = "<ul><li><div class='icon_line'><div class='icon_line_container'>";
+	    	var lineIndex = 0;
+	    	if($("#inputText").val() != ""){
+		    	for( var i = 0; i < searchResultArr.length; i += 4){
+		    		lineIndex++;
+		    		htmlOutString += "<div class='search_block_icon_cell'><a href='" + searchResultArr[ i + 2 ] + "'>";
+		    		htmlOutString += "<div class='content_icon_cell' style='background:url(" + searchResultArr[ i + 3 ] + ") no-repeat center 0px; background-size:50%;'>";
+		    		htmlOutString += "<div class='content_icon_cell_txt'>" + searchResultArr[ i ] + "</div></div></a></div>";
+	            	if( lineIndex%4 == 0 ){
+	            		htmlOutString += "</div></div></li><li><div class='icon_line'><div class='icon_line_container'>";
+		    		}
+		    	}
+		    	htmlOutString += "</div></div></li></ul>";
+		    	
+		    	var htmlOut = $(htmlOutString);
+		    	
+		    	$('#menu3').empty();
+		    	$('#content_1').empty();
+		    	$('#search_block').empty();
+		    	htmlOut.appendTo("#search_block");
+	    	}else{
+	    		$('#search_block').empty();
+		    	navigationBarGenerate();
+		    	contentBlockGenerate("01");
+	    	}
+	    }
+	    
+	    function searchStores(keyWord){
+	    	var storeList = new Array();
+	    	var resultList = new Array();
+	    	storeList = store.get("allStores").split(",");
+	    	for(var i = 0; i < storeList.length; i+=4){
+	    		if(storeList[i].match(keyWord) != null){
+	    			resultList.push(storeList[i]);
+	    			resultList.push(storeList[i+1]);
+	    			resultList.push(storeList[i+2]);
+	    			resultList.push(storeList[i+3]);
+	    		}
+	    	}
+	    	return resultList;
+	    }
+	    
+	    function getAllStores4Search(){
+	    	var storeArr = new Array();
+	    	$.ajax({
+                type:"get", 
+                url:"data/store.xml",
+                contentType:"text/xml",
+                dataType:"xml",
+                async: false,
+                timeout:2000,
+                cache:false,
+                success:function(xml){
+                    $(xml).find("ChinaStore").each(function(i){
+                    	var arr_child = new Array();
+                    	arr_child.push($(this).children("Name").text());
+                    	arr_child.push($(this).children("ID").text());
+                    	arr_child.push($(this).children("NetworkURL").text());
+                    	arr_child.push($(this).children("IconLocalURL").text());
+                    	storeArr.push(arr_child);
+                    });
+                    store.set("allStores", storeArr);
+                }
+            });
+	    }
+	    
 	    function navigationBarGenerate(){
             $.ajax({
                 type:"get", 
                 url:"data/storeclass.xml",
                 contentType:"text/xml",
                 dataType:"xml",
+                async: false,
                 timeout:2000,
                 cache:false,
                 success:function(xml){
@@ -541,14 +665,14 @@ background: #f2f2f2 ;
 				<div class="top-bar-c">
 					<div class="s-input-select">
 						<div class="s-input-frame">
-							<form class="c-form-suggest" id="J_Search" method="get" action="">
+							<div class="c-form-suggest" id="J_Search">
 								<div class="c-form-btn">
-									<input type="button" name="search" class="icons-search" id="search">
+									<input type="button" name="search" class="icons-search" id="search" onclick="searchBlockProduce();">
 								</div>
-								<div class="s-form-search search-form"><input type="search" name="q" class="J_autocomplete" autocomplete="off" value="" placeholder="搜索">
-									<button style="display: none;"><span></span></button>
+								<div class="s-form-search search-form">
+									<input id="inputText" type="search" class="J_autocomplete" autocomplete="off" value="" placeholder="搜索" onkeyup="searchBlockProduce();">
 								</div>
-							</form>
+							</div>
 						</div>
 					</div>
 				</div>				
@@ -557,6 +681,7 @@ background: #f2f2f2 ;
 	</div>
 </div>
 <div id="menu3"></div>
-<div class="menu4" id="content_1"></div>
+<div class="menu4" id="content_1"></div> 
+<div id="search_block"></div>
 </body>
 </html>
