@@ -103,9 +103,11 @@
     		getChildClassByParentClassID(classId);
     		var arr = store.get("childClassArray").split(",");
     		var item_length = arr.length/2;
+    		var line_cell_index = 0;
 	    	if(arr[0] != ""){
 		    	for( var i = 0; i < item_length; i++ ){
 		    		htmlOut.append("<li><a href='#' id='current'>" + arr[ 2*i + 1] + "</a></li>");
+		    		line_cell_index = 0;
 		    		getStoresByClassID(arr[2*i]);
 		    		htmlOut.append(store.get("storesHtmlOut"));
 		    	}
@@ -129,33 +131,24 @@
                 cache:false,
                 success:function(xml){
                 	var i = 0;
-                    $(xml).find("ChinaStore").each(function(i){
+                    $(xml).find("ChinaStore").each(function(){
                         if(classId.length == 4 && $(this).children("ChildClassID").text() == classId){
                         	htmlOut += "<div class='icon_cell'><a href='"
                         			+ $(this).children("NetworkURL").text()
                         			+ "'><div class='content_icon_cell' style='background:url(" 
                         			+ $(this).children("IconLocalURL").text()
                         			+ ") no-repeat center 0px; background-size:50%;' ><div class='content_icon_cell_txt'>"
-                        			+ $(this).children("Name").text() 
+                        			+ $(this).children("Name").text()
                         			+ "</div></div></a></div>" ;
-                        			
                         	i++;
-                        	if( i%3 == 0 && i != 0 ){
+                        	if( i%3 == 0 ){
+                        		i = 0;
         		    			htmlOut += "</div></div></li><li><div class='icon_line'><div class='icon_line_container'>";
         		    		}
                         }
                     });
-                    if( i%3 == 2 ){
-                    	store.set("storesHtmlOut", htmlOut.substring(0,htmlOut.length - 56));
-                    }else{
-                    	for(var j = 0; j <= 3 - (j % 3); j++){
-                    		htmlOut += "<div class='icon_cell'><a href='#' style='display: none'>"
-        		    				+ "<div class='content_icon_cell' style='background:url() no-repeat center 0px; background-size:50%;' >"
-        		    				+ "<div class='content_icon_cell_txt'></div></div></a></div>";
-                    	}
-                    	htmlOut += "</div></div></li></ul>";
-                    	store.set("storesHtmlOut", htmlOut);
-                    }
+                	htmlOut += "</div></div></li></ul>";
+                	store.set("storesHtmlOut", htmlOut);
                 }
             });
             
