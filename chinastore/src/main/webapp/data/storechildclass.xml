@@ -17,6 +17,11 @@
 		<ChildClassIDName>保温杯</ChildClassIDName>
 	</ChildClass>
 	<ChildClass>
+		<ParentClassID>01</ParentClassID>
+		<ChildClassID>0104</ChildClassID>
+		<ChildClassIDName>茶器单杯</ChildClassIDName>
+	</ChildClass>
+	<ChildClass>
 		<ParentClassID>02</ParentClassID>
 		<ChildClassID>0201</ChildClassID>
 		<ChildClassIDName>餐具单品</ChildClassIDName>
