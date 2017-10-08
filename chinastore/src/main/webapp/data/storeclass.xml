@@ -48,4 +48,10 @@
 		<Name>家居</Name>
 		<ChildClassFlag>N</ChildClassFlag>
 	</ChinaStoreClass>
+	
+	<ChinaStoreClass>
+		<ID>09</ID>
+		<Name>釉料</Name>
+		<ChildClassFlag>N</ChildClassFlag>
+	</ChinaStoreClass>
 </ChinaStoreClasses>
