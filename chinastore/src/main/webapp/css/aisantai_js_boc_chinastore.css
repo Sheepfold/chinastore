@@ -381,8 +381,10 @@ background: #f1f1f1 ;
 	padding-top: 60%;
 	font-size: 15px;
 	bottom:0px;
-	font-family: Pmingliu;
 	font-weight: bold;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 .icon_cell a {
 	width: 100%;
