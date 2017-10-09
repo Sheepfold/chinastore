@@ -8,7 +8,6 @@ body, hr, p, blockquote, dl, dt, dd, ol, pre, form, fieldset, legend, button, in
     padding: 0;
 }
 body {
-    color: #000;
     font-family: Microsoft YaHei;
     background: #FFF;
 	margin:0 auto;
@@ -285,6 +284,7 @@ padding:0;
 #menu3 li
 {
 display: inline;
+background-color:#fff;
 /* for IE5 and IE6 */
 }
 
@@ -312,10 +312,6 @@ background:linear-gradient(270deg, #f1f1f1 97%, #3170b9 3%);color:#6896cc;
 {
 background:linear-gradient(270deg, #f1f1f1 97%, #3170b9 3%);color:#6896cc;
 }
-
-
-/* Menu 3 ends here */
-
 
 /* Menu 4 starts here */
 .menu4 {
