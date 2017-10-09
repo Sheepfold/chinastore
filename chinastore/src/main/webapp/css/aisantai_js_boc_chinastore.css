@@ -377,18 +377,19 @@ background: #f1f1f1 ;
 	margin: 0;
 }
 .content_icon_cell_txt {
-	width: 100%;
+	width: 70%;
 	padding-top: 60%;
-	font-size: 15px;
+	padding-left: 15%;
+	padding-right: 15%;
+	font-size: 13px;
 	bottom:0px;
-	font-weight: bold;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
 .icon_cell a {
 	width: 100%;
-	color:black;
+	color: black;
 	text-decoration: none;
 }
 .icon_cell {
@@ -398,9 +399,9 @@ background: #f1f1f1 ;
 }
 .icon_line_container {
 	width: 100%;
-	margin: 10px 0 10px 0;
-	overflow:hidden;
-	display:inline-block;
+	margin: 10px 0 0 0;
+	overflow: hidden;
+	display: inline-block;
 }
 .icon_line {
 	width: 100%;
