@@ -17,6 +17,11 @@
 		<ChildClassIDName>保温杯</ChildClassIDName>
 	</ChildClass>
 	<ChildClass>
+		<ParentClassID>01</ParentClassID>
+		<ChildClassID>0104</ChildClassID>
+		<ChildClassIDName>茶器单杯</ChildClassIDName>
+	</ChildClass>
+	<ChildClass>
 		<ParentClassID>02</ParentClassID>
 		<ChildClassID>0201</ChildClassID>
 		<ChildClassIDName>餐具单品</ChildClassIDName>
@@ -46,5 +51,62 @@
 		<ChildClassID>0304</ChildClassID>
 		<ChildClassIDName>流水摆件</ChildClassIDName>
 	</ChildClass>
+	<ChildClass>
+		<ParentClassID>03</ParentClassID>
+		<ChildClassID>0305</ChildClassID>
+		<ChildClassIDName>家居软装</ChildClassIDName>
+	</ChildClass>
+	<ChildClass>
+		<ParentClassID>03</ParentClassID>
+		<ChildClassID>0306</ChildClassID>
+		<ChildClassIDName>雕塑摆件</ChildClassIDName>
+	</ChildClass>
+	<ChildClass>
+		<ParentClassID>03</ParentClassID>
+		<ChildClassID>0307</ChildClassID>
+		<ChildClassIDName>仿古瓷</ChildClassIDName>
+	</ChildClass>
+	<ChildClass>
+		<ParentClassID>03</ParentClassID>
+		<ChildClassID>0308</ChildClassID>
+		<ChildClassIDName>瓷桌落地花瓶</ChildClassIDName>
+	</ChildClass>
+	
+	<ChildClass>
+		<ParentClassID>04</ParentClassID>
+		<ChildClassID>0401</ChildClassID>
+		<ChildClassIDName>花器</ChildClassIDName>
+	</ChildClass>
+	
+	<ChildClass>
+		<ParentClassID>05</ParentClassID>
+		<ChildClassID>0501</ChildClassID>
+		<ChildClassIDName>酒器</ChildClassIDName>
+	</ChildClass>
+	
+	<ChildClass>
+		<ParentClassID>06</ParentClassID>
+		<ChildClassID>0601</ChildClassID>
+		<ChildClassIDName>文房</ChildClassIDName>
+	</ChildClass>
+	
+	<ChildClass>
+		<ParentClassID>07</ParentClassID>
+		<ChildClassID>0701</ChildClassID>
+		<ChildClassIDName>咖啡具</ChildClassIDName>
+	</ChildClass>
+	
+	<ChildClass>
+		<ParentClassID>08</ParentClassID>
+		<ChildClassID>0801</ChildClassID>
+		<ChildClassIDName>家具</ChildClassIDName>
+	</ChildClass>
+	
+	<ChildClass>
+		<ParentClassID>09</ParentClassID>
+		<ChildClassID>0901</ChildClassID>
+		<ChildClassIDName>釉料</ChildClassIDName>
+	</ChildClass>
+	
 </ChildClasses>
 

@@ -5,12 +5,23 @@
 	    	initAllBlock();
 	    });
 	    
+	    function backBGColor4NavigationBar(classId){
+	    	var classesList = new Array();
+	    	classList = store.get("allClasses").split(",");
+	    	for(var i = 0; i < classList.length; i += 2){
+	    		if(classList[i] != classId){
+	    			var name = "nav" + classList[i];
+	    			document.getElementById(name).style.backgroundColor = "#fff";
+	    		}
+	    	}
+	    }
+	    
 	    function createNavigationBar(){
 	    	var classesList = new Array();
 	    	var htmlOut = $("<ul>");
 	    	classList = store.get("allClasses").split(",");
 	    	for(var i = 0; i < classList.length; i += 2){
-	    		 htmlOut.append("<li><a href='#' onmousedown=\"creatContentBlock('" + classList[i] + "');\">"+ classList[ i + 1 ] + "</a></li>");
+	    		 htmlOut.append("<li><a href='#' id='nav" + classList[i] + "' onmousedown=\"creatContentBlock('" + classList[i] + "');backBGColor4NavigationBar('" + classList[i] + "');\">"+ classList[ i + 1 ] + "</a></li>");
 	    	}
 	    	htmlOut.append("</ul>");
             htmlOut.appendTo("#menu3");
