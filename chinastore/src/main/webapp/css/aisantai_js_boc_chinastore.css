@@ -8,7 +8,6 @@ body, hr, p, blockquote, dl, dt, dd, ol, pre, form, fieldset, legend, button, in
     padding: 0;
 }
 body {
-    color: #000;
     font-family: Microsoft YaHei;
     background: #FFF;
 	margin:0 auto;
@@ -20,6 +19,12 @@ html, body {
     color: #3d4245;
     font-size: 14px;
     -webkit-text-size-adjust: none;
+    
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+	-webkit-user-select: none;
+	-moz-user-focus: none;
+	-moz-user-select: none;
 }
 .top-bar-c {
     -webkit-box-flex: 1;
@@ -285,10 +290,26 @@ padding:0;
 #menu3 li
 {
 display: inline;
+background-color:#fff;
 /* for IE5 and IE6 */
 }
 
 #menu3 a
+{
+color:#6896cc;
+align:center;
+font-family: 仿宋;
+font-weight: bold;
+font-color:#6896cc;
+text-decoration: none;
+padding:15px;
+margin-bottom:2px;
+background-color:#fff;
+display: block;
+font-size:16px;
+}
+
+#menu3 a:link
 {
 color:#6896cc;
 align:center;
@@ -312,10 +333,10 @@ background:linear-gradient(270deg, #f1f1f1 97%, #3170b9 3%);color:#6896cc;
 {
 background:linear-gradient(270deg, #f1f1f1 97%, #3170b9 3%);color:#6896cc;
 }
-
-
-/* Menu 3 ends here */
-
+#menu3 a:active
+{
+background:linear-gradient(270deg, #f1f1f1 97%, #3170b9 3%);color:#6896cc;
+}
 
 /* Menu 4 starts here */
 .menu4 {

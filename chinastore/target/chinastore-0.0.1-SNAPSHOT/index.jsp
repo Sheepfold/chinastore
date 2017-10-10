@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>银瓷通</title>
+		<title>瓷器商店</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 		<link href="css/aisantai_js_boc_chinastore.css" rel="stylesheet" type="text/css" />
@@ -33,7 +33,9 @@
 		</div>
 	</div>
 	<div id="menu3"></div>
-	<div class="menu4" id="content_1"></div> 
+	<div id="content_block">
+		<div class="menu4" id="content_1"></div> 
+	</div>
 	<div id="search_block"></div>
 	</body>
 </html>

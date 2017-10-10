@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.xml
+chinastore/target/chinastore-0.0.1-SNAPSHOT/data/storechildclass.xml
+*.xml
+chinastore/target/chinastore-0.0.1-SNAPSHOT/data/store.xml
+*.xml
